@@ -1,7 +1,7 @@
 ﻿define("bees/worker", [], function () {
     var prototype = new function() {
-        this.lifespan = 75;
-        this.lifelost = 10;
+        this.maxHealth = 75;
+        this.healthLost = 10;
         this.maxCount = 5;
     }
 

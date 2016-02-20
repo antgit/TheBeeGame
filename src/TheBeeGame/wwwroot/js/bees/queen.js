@@ -1,7 +1,7 @@
 ﻿define("bees/queen", [], function () {
     var prototype = new function () {
-        this.lifespan = 100;
-        this.lifelost = 8;
+        this.maxHealth = 100;
+        this.healthLost = 8;
         this.maxCount = 1;
     }
 

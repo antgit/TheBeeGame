@@ -1,7 +1,7 @@
 ﻿define("bees/drone", [], function () {
     var prototype = new function () {
-        this.lifespan = 50;
-        this.lifelost = 12;
+        this.maxHealth = 50;
+        this.healthLost = 12;
         this.maxCount = 8;
     }
 
