@@ -2,16 +2,16 @@
     var prototype = new function () {
         this.maxHealth = 100;
         this.healthLost = 8;
-        this.maxCount = 1;
     }
 
     function create() {
-        return new function () {
+        return new function queen() {
             this.__proto__ = prototype;
         }
     }
 
     return {
-        create: create
+        create: create,
+        maxCount: 1
     };
 });
