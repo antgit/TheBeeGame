@@ -6,7 +6,5 @@
         }
     }
 
-    return {
-        bee: bee
-    };
+    return bee;
 });

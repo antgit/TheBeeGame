@@ -1,4 +1,4 @@
-﻿define("bees/worker", ["bees/bee"], function (bee) {
+﻿define("bees/worker", ["bee"], function (bee) {
     var prototype = new function () {
         this.maxHealth = 75;
         this.healthLost = 10;

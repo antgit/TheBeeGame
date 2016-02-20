@@ -9,7 +9,14 @@
         });
     }
 
+    function hitRandomBee() {
+        var index = Math.floor(Math.random() * bees.length);
+        var randomBee = bees[index];
+        randomBee.hit();
+    }
+
     return {
-        init: init
+        init: init,
+        hitRandomBee: hitRandomBee
     };
 });

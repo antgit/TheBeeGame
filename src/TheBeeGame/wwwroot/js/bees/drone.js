@@ -1,4 +1,4 @@
-﻿define("bees/drone", ["bees/bee"], function (bee) {
+﻿define("bees/drone", ["bee"], function (bee) {
     var prototype = new function () {
         this.maxHealth = 50;
         this.healthLost = 12;
