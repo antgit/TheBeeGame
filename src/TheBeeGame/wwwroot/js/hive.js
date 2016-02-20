@@ -15,8 +15,15 @@
         randomBee.hit();
     }
 
+    function clenup() {
+        bees = bees.filter(function(bee) {
+            return bee.isAlive();
+        });
+    }
+
     return {
         init: init,
-        hitRandomBee: hitRandomBee
+        hitRandomBee: hitRandomBee,
+        clenup: clenup
     };
 });

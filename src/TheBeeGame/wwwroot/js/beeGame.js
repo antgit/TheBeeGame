@@ -4,6 +4,7 @@
 
         $("#hit").click(function() {
             hive.hitRandomBee();
+            hive.clenup();
         });
     }
 
