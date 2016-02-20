@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using TheBeeGame.Bees;
 
 namespace TheBeeGame
 {
@@ -9,6 +10,7 @@ namespace TheBeeGame
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddSingleton<Hive>();
         }
 
         public void Configure(IApplicationBuilder app)

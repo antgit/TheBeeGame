@@ -8,7 +8,7 @@
 
         public abstract int HealthLost { get; }
 
-        public Bee()
+        protected Bee()
         {
             Health = MaxHealth;
         }
@@ -16,6 +16,11 @@
         public void Hit()
         {
             Health -= HealthLost;
+        }
+
+        public bool IsDead()
+        {
+            return Health <= 0;
         }
     }
 }
