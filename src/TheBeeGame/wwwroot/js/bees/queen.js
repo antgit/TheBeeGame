@@ -2,6 +2,7 @@
     var prototype = new function () {
         this.maxHealth = 100;
         this.healthLost = 8;
+        this.isQueen = true;
         this.__proto__ = bee;
     }
 
