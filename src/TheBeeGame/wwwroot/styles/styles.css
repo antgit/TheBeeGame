@@ -1,3 +1,24 @@
 body {
   background-color: yellow;
 }
+#hit {
+  background-color: red;
+  border: none;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -50px;
+  padding: 0;
+  color: white;
+  border-radius: 50%;
+  font-size: 42px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#hit:hover {
+  background-color: #ff6666;
+}
+#hit:focus {
+  outline: 0;
+}
