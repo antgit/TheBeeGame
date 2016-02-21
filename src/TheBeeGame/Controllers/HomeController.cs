@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.AspNet.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using TheBeeGame.Bees;
+using TheBeeGame.Infrastructure.Exceptions;
+using TheBeeGame.Models;
 
 namespace TheBeeGame.Controllers
 {
@@ -33,12 +36,40 @@ namespace TheBeeGame.Controllers
         [HttpGet]
         public IActionResult GetAllBees()
         {
-            var json = JsonConvert.SerializeObject(_hive.GetAllBees(), new JsonSerializerSettings
+            var bees = _hive.GetAllBees();
+
+            var model = bees.Select(b => new BeeModel
+            {
+                Health = b.Health,
+                Type = ConvertBeeType(b)
+            }).ToList();
+
+            var json = JsonConvert.SerializeObject(model, new JsonSerializerSettings
             {
                 ContractResolver = new CamelCasePropertyNamesContractResolver()
             });
 
             return Content(json, "application/json");
+        }
+
+        private BeeType ConvertBeeType(Bee bee)
+        {
+            if (bee is Queen)
+            {
+                return BeeType.Queen;
+            }
+
+            if (bee is Worker)
+            {
+                return BeeType.Worker;
+            }
+
+            if (bee is Drone)
+            {
+                return BeeType.Drone;
+            }
+
+            throw new UnknownBeeException();
         }
     }
 }
