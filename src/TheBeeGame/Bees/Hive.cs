@@ -8,6 +8,7 @@ namespace TheBeeGame.Bees
     {
         private readonly List<Bee> _bees;
         private readonly Random _random;
+        private readonly object _lock = new object();
 
         public Hive()
         {
@@ -33,12 +34,17 @@ namespace TheBeeGame.Bees
 
         public void HitRandomBee()
         {
-            var index = _random.Next(_bees.Count);
-            var bee = _bees[index];
-            bee.Hit();
+            lock (_lock)
+            {
+                var index = _random.Next(_bees.Count);
+                var bee = _bees[index];
+                bee.Hit();
+
+                Cleanup();
+            }
         }
 
-        public void Cleanup()
+        private void Cleanup()
         {
             _bees.RemoveAll(b => b.IsDead());
 
@@ -55,8 +61,11 @@ namespace TheBeeGame.Bees
 
         public void Repopulate()
         {
-            _bees.Clear();
-            Populate();
+            lock (_lock)
+            {
+                _bees.Clear();
+                Populate();
+            }
         }
     }
 }
