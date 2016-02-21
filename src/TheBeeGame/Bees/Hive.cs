@@ -6,8 +6,8 @@ namespace TheBeeGame.Bees
 {
     public class Hive
     {
-        private List<Bee> _bees;
-        private Random _random;
+        private readonly List<Bee> _bees;
+        private readonly Random _random;
 
         public Hive()
         {

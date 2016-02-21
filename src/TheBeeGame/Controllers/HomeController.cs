@@ -22,6 +22,7 @@ namespace TheBeeGame.Controllers
             return View();
         }
 
+        [HttpPost]
         public IActionResult HitRandomBee()
         {
             _hive.HitRandomBee();
@@ -29,6 +30,7 @@ namespace TheBeeGame.Controllers
             return new HttpOkResult();
         }
 
+        [HttpGet]
         public IActionResult GetAllBees()
         {
             var json = JsonConvert.SerializeObject(_hive.GetAllBees(), new JsonSerializerSettings

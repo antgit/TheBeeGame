@@ -1,25 +1,13 @@
-﻿define("beeGame", ["jquery"], function ($) {
+﻿define("beeGame", ["jquery", "beeService"], function ($, beeService) {
     function init() {
         $("#hit").click(function() {
-            hitRandomBee().done(function (e) {
-                getAllBees().done(function(data) {
+            beeService.hitRandomBee().done(function (e) {
+                beeService.getAllBees().done(function (data) {
                     console.log(data.length);
                 });
             }).fail(function(e) {
 
             });
-        });
-    }
-
-    function hitRandomBee() {
-        return $.ajax({
-            url: "/Home/HitRandomBee"
-        });
-    }
-
-    function getAllBees() {
-        return $.ajax({
-            url: "/Home/GetAllBees"
         });
     }
 
