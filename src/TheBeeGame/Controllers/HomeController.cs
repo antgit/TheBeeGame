@@ -41,7 +41,8 @@ namespace TheBeeGame.Controllers
             var model = bees.Select(b => new BeeModel
             {
                 Health = b.Health,
-                Type = ConvertBeeType(b)
+                Type = ConvertBeeType(b),
+                UniqueId = b.UniqueId
             }).ToList();
 
             var json = JsonConvert.SerializeObject(model, new JsonSerializerSettings

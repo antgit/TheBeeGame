@@ -1,4 +1,6 @@
-﻿namespace TheBeeGame.Bees
+﻿using System;
+
+namespace TheBeeGame.Bees
 {
     public abstract class Bee
     {
@@ -8,9 +10,12 @@
 
         public abstract int HealthLost { get; }
 
+        public Guid UniqueId { get; private set; }
+
         protected Bee()
         {
             Health = MaxHealth;
+            UniqueId = Guid.NewGuid();
         }
 
         public void Hit()
