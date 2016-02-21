@@ -4,9 +4,21 @@
             this.health = ko.observable(options.health);
             this.type = options.type;
             this.uniqueId = options.uniqueId;
+            this.image = getImage(options.type);
 
             this.left = Math.floor(Math.random() * 100);
             this.top = Math.floor(Math.random() * 100);
+        }
+    }
+
+    function getImage(beeType) {
+        switch (beeType) {
+            case 1:
+                return "queen.gif";
+            case 2:
+                return "worker.gif";
+            case 3:
+                return "drone.gif";
         }
     }
 

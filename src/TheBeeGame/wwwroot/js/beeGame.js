@@ -9,7 +9,6 @@
             beeService.hitRandomBee().done(function (e) {
                 beeService.getAllBees().done(function (data) {
                     hive.update(data);
-                    console.log(data.length);
                 });
             }).fail(function(e) {
 

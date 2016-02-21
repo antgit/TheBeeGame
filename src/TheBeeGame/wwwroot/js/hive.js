@@ -1,10 +1,10 @@
-﻿define("hive", ["bee", "knockout"], function(bee, ko) {
+﻿define("hive", ["bee", "jquery", "knockout"], function(bee, $, ko) {
     var viewModel = {
         bees : ko.observableArray()
     };
 
     function bind() {
-        ko.applyBindings(viewModel);
+        ko.applyBindings(viewModel, $("#hive")[0]);
     }
 
     function update(newBees) {
