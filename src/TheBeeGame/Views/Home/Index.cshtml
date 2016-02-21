@@ -1,10 +1,11 @@
 ﻿<div id="hive" data-bind="foreach: bees">
-    <div class="bee">
-        <img data-bind="attr: {src: '/images/' + image }" />
+    <div class="bee" data-bind="style: { left: left + 'px', top: top + 'px' }">
+        <div class="health-bar" data-bind="style: { width: health() + 'px' }"></div>
+        <img data-bind="attr: {src: '/images/' + image }"/>
     </div>
 </div>
 
-<button id="hit">Hit</button>
+<button id="hit">Hit!</button>
 
 @section Scripts{
     <script type="text/javascript">

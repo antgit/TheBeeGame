@@ -6,8 +6,8 @@
             this.uniqueId = options.uniqueId;
             this.image = getImage(options.type);
 
-            this.left = Math.floor(Math.random() * 100);
-            this.top = Math.floor(Math.random() * 100);
+            this.left = Math.floor(Math.random() * (800 - 200));
+            this.top = Math.floor(Math.random() * (800-  93));
         }
     }
 
