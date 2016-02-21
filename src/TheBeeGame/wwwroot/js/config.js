@@ -3,7 +3,9 @@
     paths: {
         jquery: "../lib/jquery/dist/jquery.min",
         beeGame: "beeGame",
-        beeService: "beeService"
+        beeService: "beeService",
+        hive: "hive",
+        bee: "bee"
     },
     shim: {
         jquery: {
