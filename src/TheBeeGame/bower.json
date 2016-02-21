@@ -3,6 +3,7 @@
 	"private": true,
   "dependencies": {
     "requirejs": "2.1.22",
-    "jquery": "2.2.0"
+    "jquery": "2.2.0",
+    "knockout": "3.4.0"
   }
 }

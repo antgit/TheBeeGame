@@ -1,5 +1,9 @@
 ﻿<h1>Home</h1>
 
+<div data-bind="foreach: bees">
+    <div data-bind="text: type + '(' + health() + ')'"></div>
+</div>
+
 <button id="hit">Hit</button>
 
 @section Scripts{
