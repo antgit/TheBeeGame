@@ -29,7 +29,6 @@ namespace TheBeeGame.Controllers
         public IActionResult HitRandomBee()
         {
             _hive.HitRandomBee();
-            _hive.Cleanup();
 
             return new HttpOkResult();
         }
