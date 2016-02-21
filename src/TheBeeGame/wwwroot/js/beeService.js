@@ -13,8 +13,16 @@
         });
     }
 
+    function repopulate() {
+        return $.ajax({
+            url: "/Home/Repopulate",
+            type: "POST"
+        });
+    }
+
     return {
         hitRandomBee: hitRandomBee,
-        getAllBees: getAllBees
+        getAllBees: getAllBees,
+        repopulate: repopulate
     };
 });

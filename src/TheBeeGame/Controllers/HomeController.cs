@@ -30,6 +30,15 @@ namespace TheBeeGame.Controllers
         {
             _hive.HitRandomBee();
             _hive.Cleanup();
+
+            return new HttpOkResult();
+        }
+
+        [HttpPost]
+        public IActionResult Repopulate()
+        {
+            _hive.Repopulate();
+
             return new HttpOkResult();
         }
 

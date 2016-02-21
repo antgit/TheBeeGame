@@ -52,5 +52,11 @@ namespace TheBeeGame.Bees
         {
             return _bees;
         }
+
+        public void Repopulate()
+        {
+            _bees.Clear();
+            Populate();
+        }
     }
 }
